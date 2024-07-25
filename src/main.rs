@@ -42,7 +42,7 @@ fn main() {
                 print!("\nm={m}   ");
                 for n in 0..tam{
                     let inicio=Instant::now();
-                    let res=ackerman_recursivo_def(m,n);
+                    let res= ackermann_recursivo_def(m, n);
                     let dur=inicio.elapsed();
                     print!("Resultado: {}, {:?}",res, dur);
                     if n<tam { print!("  ||  ")}
@@ -52,9 +52,12 @@ fn main() {
         }).unwrap().join().unwrap();
 }
 
-fn ackerman_recursivo_def(m:u8,n:u128)->u128{
+fn ackermann_recursivo_def(m:u8, n:u128) -> u128{
     if m==0 { return n+1; }
-    if m>0 && n==0 {return ackerman_recursivo_def(m-1,1);}
-    if m>0 && n>0 {return ackerman_recursivo_def(m-1, ackerman_recursivo_def(m, n - 1));}
+    if m>0 && n==0 {return ackermann_recursivo_def(m-1, 1);}
+    if m>0 && n>0 {return ackermann_recursivo_def(m-1, ackermann_recursivo_def(m, n - 1));}
     return 0;
+}
+fn ackermann_dinamico(m:u8,n:u128) -> u128 {
+    n //TODO Metodo por realizar
 }
