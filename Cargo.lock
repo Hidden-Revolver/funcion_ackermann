@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "Funcion_ackermann"
+name = "funcion_ackermann"
 version = "0.1.0"

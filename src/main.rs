@@ -35,7 +35,7 @@ fn main() {
     };
  */
     std::thread::Builder::new()
-        .stack_size(size_of::<f64>() * 2_000_000_000)
+        .stack_size(size_of::<f64>() * 2_000_000_000)// El stack es lento para hacer operaciones y sospecho que se puede recalcular mediante programación dinamica
         .spawn(||{
             let tam=2;
             for m in 0..7 {
